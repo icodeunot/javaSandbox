@@ -1,0 +1,19 @@
+// Only showing the solutions to this tough lil lab. Method definitions as follows: (No method name or declarations. Just the solutions.)
+
+   while (infoScnr.hasNext()) {
+         String[] scanName = infoScnr.nextLine().split(" ");
+         if (scanName[0].trim().equals(studentName)){
+            return scanName[1].trim();
+         }
+         
+      }
+      throw new Exception("Student ID not found for " + studentName);
+
+      while (infoScnr.hasNext()) {
+         String[] scanID = infoScnr.nextLine().split(" ");
+         if (scanID[1].trim().equals(studentID)) {
+            return scanID[0].trim();
+         }
+      }
+      throw new Exception("Student name not found for " + studentID);      
+
