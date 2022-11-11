@@ -1,0 +1,72 @@
+/**************************************************************************************   
+**   I am finished reading through the ZY Material and now have to build my project. **
+**   My goal is to turn the code below into a method in my downtime.                 **
+**   That sounds easy enough but I have a lot going through my brain right now.      **
+**************************************************************************************/
+
+import java.util.Scanner;
+import java.util.NoSuchElementException;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      int val1;
+      int val2;
+      int val3;
+      int max;
+      
+      val1 = 0;
+      val2 = 0;
+      val3 = 0;
+      
+      int counter = 0;
+      int maxInt = 0;
+      
+      while (scnr.hasNext()) {
+      counter++;
+         if (val1 == 0) {
+            val1 = scnr.nextInt();
+            if (val1 > maxInt) {
+               maxInt = val1;
+            }
+         }
+         else if (val2 == 0) {
+            val2 = scnr.nextInt();
+            if (val2 > maxInt) {
+               maxInt = val2;
+            }
+         }
+         else if (val3 == 0) {
+            val3 = scnr.nextInt();
+            if (val3 > maxInt) {
+               maxInt = val3;
+            }
+         }
+      }
+      try {
+      if (counter == 0) {
+         throw new Exception(counter + " input(s) read:");
+      }
+      else if (counter == 1) {
+         throw new Exception(counter + " input(s) read:");
+      }
+      else if (counter == 2) {
+         throw new Exception(counter + " input(s) read:");
+      }
+      else if (counter == 3) {
+         System.out.println(maxInt);
+      }
+      }
+         
+      catch (Exception excpt) {
+         System.out.println(excpt.getMessage());
+         if (counter == 0) {
+            System.out.println("No max");
+         }
+         else {
+            System.out.println("Max is " + maxInt);
+         }
+      }
+   }
+}
