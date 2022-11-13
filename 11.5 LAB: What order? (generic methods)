@@ -1,0 +1,49 @@
+// I know there is a more elegant way to write this function, my goal is to do that one day.
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
+
+public class WhatOrder {
+   // TODO: Define a generic method called checkOrder() that 
+   //       takes in four variables of generic type as arguments. 
+   //       The return type of the method is integer
+   public static <AnyType extends Comparable<AnyType>>
+   
+   int checkOrder(AnyType type1, AnyType type2, AnyType type3, AnyType type4) {
+      
+      if (type1.compareTo(type2) < 0) {
+         if (type2.compareTo(type3) < 0) {
+            if (type3.compareTo(type4) < 0) {
+               return -1;
+            }
+            return 0;
+         }
+         return 0;
+      }
+      if (type1.compareTo(type2) > 0) {
+         if (type2.compareTo(type3) > 0) {
+            if (type3.compareTo(type4) > 0) {
+               return 1;
+            }
+            return 0;
+         }
+         return 0;
+      }
+   return 0;
+   }      
+   
+      // Check the order of the input: return -1 for ascending, 
+      // 0 for neither, 1 for descending
+
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+
+      // Check order of four strings
+      System.out.println("Order: " + checkOrder(scnr.next(), scnr.next(), scnr.next(), scnr.next())); 
+
+      // Check order of four doubles
+      System.out.println("Order: " + checkOrder(scnr.nextDouble(), scnr.nextDouble(), scnr.nextDouble(), scnr.nextDouble()));
+   }
+}
